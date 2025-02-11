@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 2vh;
+    background-color: rgb(210, 236, 255);
+}
+
+@media (min-width: 100px) {
+    .grid-container {
+        width: 98vw;
+        min-height: 98vh;
+        margin-inline: 1vw;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        background-color: rgb(240, 240, 240);
+        gap: 1rem;
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+
+
+    .grid-container > .card-image > .flex-container > .image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 50vw;
+        height: 40vw;
+        position:initial;
+        margin: 0.5rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .grid-container {
+        width: 98vw;
+        min-height: 98vh;
+        margin-inline: 1vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: rgb(240, 240, 240);
+        gap: 1rem;
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+
+    .grid-container > .card-image > .flex-container > .image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 40vw;
+        height: 40vw;
+        position:initial;
+        margin: 0.5rem;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .grid-container {
+        width: 98vw;
+        min-height: 98vh;
+        margin-inline: 1vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: rgb(240, 240, 240);
+        gap: 1rem;
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+
+    .grid-container > .card-image > .flex-container > .image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 40vw;
+        height: 40vw;
+        position:initial;
+        margin: 0.5rem;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .grid-container {
+        width: 98vw;
+        min-height: 98vh;
+        margin-inline: 1vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background-color: rgb(240, 240, 240);
+        gap: 1rem;
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+
+    .grid-container > .card-image > .flex-container > .image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 20vw;
+        height: 40vw;
+        position:initial;
+        margin: 0.5rem;
+    }
+}
+
+
+.grid-container > .card-image > .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+
+.grid-container > .card-image > .flex-container > .date {
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.grid-container > .card-image > .flex-container > .name {
+    font-size: 1.1rem;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 0.3rem;
+}

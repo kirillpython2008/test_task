@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/template-main.css') }}">
+    <title>Screenshots</title>
+</head>
+<body>
+    <div class="grid-container" id="screenshots-container">
+        {% for screenshot in screenshots %}
+        <div class="card-image">
+            <div class="flex-container">
+                <div class="image" style="background-image: url('{{ url_for('media', path=screenshot.1) }}');" alt="Screenshot"></div>
+                <span class="name">{{ screenshot.1 }}</span>
+                <span class="date">{{ screenshot.0 }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        const eventSource = new EventSource("/main/stream");
+
+        eventSource.onmessage = function(event) {
+            const screenshots = JSON.parse(event.data);
+            const container = document.getElementById('screenshots-container');
+            container.innerHTML = '';
+
+            screenshots.forEach(screenshot => {
+                const card = document.createElement('div');
+                card.className = 'card-image';
+                card.innerHTML = `<div class="flex-container">
+                                    <div class="image" style="background-image: url('{{ url_for('media', path='') }}${screenshot[1]}');" alt="Screenshot"></div>
+                                    <span class="name">${screenshot[1]}</span>
+                                    <span class="date">${screenshot[0]}</span>
+                                  </div>`;
+                container.appendChild(card);
+            });
+        };
+
+        eventSource.onerror = function(event) {
+            console.error("EventSource failed:", event);
+        };
+    </script>
+</body>
+</html>
